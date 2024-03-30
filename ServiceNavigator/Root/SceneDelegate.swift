@@ -13,7 +13,10 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
     func scene(_ scene: UIScene, willConnectTo _: UISceneSession, options _: UIScene.ConnectionOptions) {
         guard let scene = (scene as? UIWindowScene) else { return }
         window = UIWindow(windowScene: scene)
-        window?.rootViewController = ViewController()
+
+        let networkService = NetworkService()
+        let rootViewController = FeedSceneAssembly.makeModule(interactorDelegate: nil, networkService: networkService)
+        window?.rootViewController = rootViewController
         window?.makeKeyAndVisible()
     }
 }
