@@ -10,9 +10,10 @@
 		EFFD66822BB7E2E3009608A4 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFFD66812BB7E2E3009608A4 /* AppDelegate.swift */; };
 		EFFD66842BB7E2E3009608A4 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFFD66832BB7E2E3009608A4 /* SceneDelegate.swift */; };
 		EFFD66862BB7E2E3009608A4 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFFD66852BB7E2E3009608A4 /* ViewController.swift */; };
-		EFFD66892BB7E2E3009608A4 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EFFD66872BB7E2E3009608A4 /* Main.storyboard */; };
 		EFFD668B2BB7E2E6009608A4 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = EFFD668A2BB7E2E6009608A4 /* Assets.xcassets */; };
 		EFFD668E2BB7E2E6009608A4 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EFFD668C2BB7E2E6009608A4 /* LaunchScreen.storyboard */; };
+		EFFD66972BB7F825009608A4 /* .swiftlint.yml in Resources */ = {isa = PBXBuildFile; fileRef = EFFD66962BB7F825009608A4 /* .swiftlint.yml */; };
+		EFFD669A2BB7F953009608A4 /* .swiftformat in Resources */ = {isa = PBXBuildFile; fileRef = EFFD66992BB7F953009608A4 /* .swiftformat */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -20,10 +21,11 @@
 		EFFD66812BB7E2E3009608A4 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		EFFD66832BB7E2E3009608A4 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
 		EFFD66852BB7E2E3009608A4 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		EFFD66882BB7E2E3009608A4 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		EFFD668A2BB7E2E6009608A4 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		EFFD668D2BB7E2E6009608A4 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		EFFD668F2BB7E2E6009608A4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		EFFD66962BB7F825009608A4 /* .swiftlint.yml */ = {isa = PBXFileReference; lastKnownFileType = text.yaml; path = .swiftlint.yml; sourceTree = "<group>"; };
+		EFFD66992BB7F953009608A4 /* .swiftformat */ = {isa = PBXFileReference; lastKnownFileType = text; path = .swiftformat; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -59,12 +61,21 @@
 				EFFD66812BB7E2E3009608A4 /* AppDelegate.swift */,
 				EFFD66832BB7E2E3009608A4 /* SceneDelegate.swift */,
 				EFFD66852BB7E2E3009608A4 /* ViewController.swift */,
-				EFFD66872BB7E2E3009608A4 /* Main.storyboard */,
+				EFFD66952BB7F67B009608A4 /* SupportingFiles */,
+				EFFD66962BB7F825009608A4 /* .swiftlint.yml */,
+				EFFD66992BB7F953009608A4 /* .swiftformat */,
+			);
+			path = ServiceNavigator;
+			sourceTree = "<group>";
+		};
+		EFFD66952BB7F67B009608A4 /* SupportingFiles */ = {
+			isa = PBXGroup;
+			children = (
 				EFFD668A2BB7E2E6009608A4 /* Assets.xcassets */,
 				EFFD668C2BB7E2E6009608A4 /* LaunchScreen.storyboard */,
 				EFFD668F2BB7E2E6009608A4 /* Info.plist */,
 			);
-			path = ServiceNavigator;
+			path = SupportingFiles;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -74,6 +85,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = EFFD66922BB7E2E6009608A4 /* Build configuration list for PBXNativeTarget "ServiceNavigator" */;
 			buildPhases = (
+				EFFD66982BB7F897009608A4 /* Run Script SwiftLint */,
 				EFFD667A2BB7E2E3009608A4 /* Sources */,
 				EFFD667B2BB7E2E3009608A4 /* Frameworks */,
 				EFFD667C2BB7E2E3009608A4 /* Resources */,
@@ -125,13 +137,36 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				EFFD669A2BB7F953009608A4 /* .swiftformat in Resources */,
+				EFFD66972BB7F825009608A4 /* .swiftlint.yml in Resources */,
 				EFFD668E2BB7E2E6009608A4 /* LaunchScreen.storyboard in Resources */,
 				EFFD668B2BB7E2E6009608A4 /* Assets.xcassets in Resources */,
-				EFFD66892BB7E2E3009608A4 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		EFFD66982BB7F897009608A4 /* Run Script SwiftLint */ = {
+			isa = PBXShellScriptBuildPhase;
+			alwaysOutOfDate = 1;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+			);
+			name = "Run Script SwiftLint";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "if which swiftlint >/dev/null; then\n  swiftlint\nelse\n  echo \"warning SwiftLint not installed, download it from https://github.com/realm/SwiftLint\"\nfi\n";
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		EFFD667A2BB7E2E3009608A4 /* Sources */ = {
@@ -147,14 +182,6 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXVariantGroup section */
-		EFFD66872BB7E2E3009608A4 /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				EFFD66882BB7E2E3009608A4 /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
 		EFFD668C2BB7E2E6009608A4 /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
@@ -293,13 +320,14 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = FC7PVA7NK7;
+				ENABLE_USER_SCRIPT_SANDBOXING = NO;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = ServiceNavigator/Info.plist;
+				INFOPLIST_FILE = ServiceNavigator/SupportingFiles/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
-				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -307,6 +335,10 @@
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = Iurii.Stepanchuk.ServiceNavigator;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = NO;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
+				SUPPORTS_XR_DESIGNED_FOR_IPHONE_IPAD = NO;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -321,13 +353,14 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = FC7PVA7NK7;
+				ENABLE_USER_SCRIPT_SANDBOXING = NO;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = ServiceNavigator/Info.plist;
+				INFOPLIST_FILE = ServiceNavigator/SupportingFiles/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
-				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -335,6 +368,10 @@
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = Iurii.Stepanchuk.ServiceNavigator;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = NO;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
+				SUPPORTS_XR_DESIGNED_FOR_IPHONE_IPAD = NO;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
