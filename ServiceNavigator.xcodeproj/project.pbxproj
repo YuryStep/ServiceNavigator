@@ -19,13 +19,15 @@
 		EFFD66A32BB7FC25009608A4 /* FeedPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFFD66A22BB7FC25009608A4 /* FeedPresenter.swift */; };
 		EFFD66A52BB7FC43009608A4 /* FeedModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFFD66A42BB7FC43009608A4 /* FeedModels.swift */; };
 		EFFD66A72BB7FC5A009608A4 /* FeedSceneAssembly.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFFD66A62BB7FC59009608A4 /* FeedSceneAssembly.swift */; };
-		EFFD66A92BB7FC72009608A4 /* FeedCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFFD66A82BB7FC72009608A4 /* FeedCell.swift */; };
 		EFFD66AC2BB80D98009608A4 /* AppFlow.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFFD66AB2BB80D98009608A4 /* AppFlow.swift */; };
 		EFFD66AF2BB80DD3009608A4 /* CoordinatorProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFFD66AE2BB80DD3009608A4 /* CoordinatorProtocol.swift */; };
 		EFFD66B12BB80E05009608A4 /* AppCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFFD66B02BB80E05009608A4 /* AppCoordinator.swift */; };
 		EFFD66B32BB80E16009608A4 /* MainFlowCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFFD66B22BB80E16009608A4 /* MainFlowCoordinator.swift */; };
 		EFFD66B82BB81F82009608A4 /* ServiceNetworkModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFFD66B72BB81F82009608A4 /* ServiceNetworkModel.swift */; };
 		EFFD66BA2BB81F9A009608A4 /* NetworkError.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFFD66B92BB81F9A009608A4 /* NetworkError.swift */; };
+		EFFD66BF2BB8834E009608A4 /* UIView+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFFD66BE2BB8834E009608A4 /* UIView+Extensions.swift */; };
+		EFFD66C22BB88387009608A4 /* UIImage+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFFD66C12BB88387009608A4 /* UIImage+Extensions.swift */; };
+		EFFD66C42BB8839E009608A4 /* UINavigationController+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFFD66C32BB8839E009608A4 /* UINavigationController+Extensions.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -43,13 +45,15 @@
 		EFFD66A22BB7FC25009608A4 /* FeedPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedPresenter.swift; sourceTree = "<group>"; };
 		EFFD66A42BB7FC43009608A4 /* FeedModels.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedModels.swift; sourceTree = "<group>"; };
 		EFFD66A62BB7FC59009608A4 /* FeedSceneAssembly.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedSceneAssembly.swift; sourceTree = "<group>"; };
-		EFFD66A82BB7FC72009608A4 /* FeedCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedCell.swift; sourceTree = "<group>"; };
 		EFFD66AB2BB80D98009608A4 /* AppFlow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppFlow.swift; sourceTree = "<group>"; };
 		EFFD66AE2BB80DD3009608A4 /* CoordinatorProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoordinatorProtocol.swift; sourceTree = "<group>"; };
 		EFFD66B02BB80E05009608A4 /* AppCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppCoordinator.swift; sourceTree = "<group>"; };
 		EFFD66B22BB80E16009608A4 /* MainFlowCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainFlowCoordinator.swift; sourceTree = "<group>"; };
 		EFFD66B72BB81F82009608A4 /* ServiceNetworkModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServiceNetworkModel.swift; sourceTree = "<group>"; };
 		EFFD66B92BB81F9A009608A4 /* NetworkError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkError.swift; sourceTree = "<group>"; };
+		EFFD66BE2BB8834E009608A4 /* UIView+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Extensions.swift"; sourceTree = "<group>"; };
+		EFFD66C12BB88387009608A4 /* UIImage+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImage+Extensions.swift"; sourceTree = "<group>"; };
+		EFFD66C32BB8839E009608A4 /* UINavigationController+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UINavigationController+Extensions.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -85,6 +89,7 @@
 				EFFD669B2BB7FB60009608A4 /* Root */,
 				EFFD669E2BB7FBBF009608A4 /* Core */,
 				EFFD669F2BB7FBD2009608A4 /* FeedScene */,
+				EFFD66C02BB8836B009608A4 /* Extension */,
 				EFFD66952BB7F67B009608A4 /* SupportingFiles */,
 				EFFD66962BB7F825009608A4 /* .swiftlint.yml */,
 				EFFD66992BB7F953009608A4 /* .swiftformat */,
@@ -126,20 +131,11 @@
 			children = (
 				EFFD66A62BB7FC59009608A4 /* FeedSceneAssembly.swift */,
 				EFFD66A42BB7FC43009608A4 /* FeedModels.swift */,
-				EFFD66A22BB7FC25009608A4 /* FeedPresenter.swift */,
 				EFFD66A02BB7FBFA009608A4 /* FeedInteractor.swift */,
+				EFFD66A22BB7FC25009608A4 /* FeedPresenter.swift */,
 				EFFD66852BB7E2E3009608A4 /* FeedViewController.swift */,
-				EFFD66AA2BB7FC80009608A4 /* FeedViews */,
 			);
 			path = FeedScene;
-			sourceTree = "<group>";
-		};
-		EFFD66AA2BB7FC80009608A4 /* FeedViews */ = {
-			isa = PBXGroup;
-			children = (
-				EFFD66A82BB7FC72009608A4 /* FeedCell.swift */,
-			);
-			path = FeedViews;
 			sourceTree = "<group>";
 		};
 		EFFD66AD2BB80DC0009608A4 /* Services */ = {
@@ -160,6 +156,16 @@
 				EFFD66B22BB80E16009608A4 /* MainFlowCoordinator.swift */,
 			);
 			path = Coordinator;
+			sourceTree = "<group>";
+		};
+		EFFD66C02BB8836B009608A4 /* Extension */ = {
+			isa = PBXGroup;
+			children = (
+				EFFD66BE2BB8834E009608A4 /* UIView+Extensions.swift */,
+				EFFD66C12BB88387009608A4 /* UIImage+Extensions.swift */,
+				EFFD66C32BB8839E009608A4 /* UINavigationController+Extensions.swift */,
+			);
+			path = Extension;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -261,6 +267,7 @@
 				EFFD66A52BB7FC43009608A4 /* FeedModels.swift in Sources */,
 				EFFD66862BB7E2E3009608A4 /* FeedViewController.swift in Sources */,
 				EFFD66A12BB7FBFA009608A4 /* FeedInteractor.swift in Sources */,
+				EFFD66C42BB8839E009608A4 /* UINavigationController+Extensions.swift in Sources */,
 				EFFD66AC2BB80D98009608A4 /* AppFlow.swift in Sources */,
 				EFFD66B32BB80E16009608A4 /* MainFlowCoordinator.swift in Sources */,
 				EFFD66B82BB81F82009608A4 /* ServiceNetworkModel.swift in Sources */,
@@ -269,9 +276,10 @@
 				EFFD66BA2BB81F9A009608A4 /* NetworkError.swift in Sources */,
 				EFFD66AF2BB80DD3009608A4 /* CoordinatorProtocol.swift in Sources */,
 				EFFD669D2BB7FBAD009608A4 /* NetworkService.swift in Sources */,
+				EFFD66BF2BB8834E009608A4 /* UIView+Extensions.swift in Sources */,
 				EFFD66A32BB7FC25009608A4 /* FeedPresenter.swift in Sources */,
 				EFFD66842BB7E2E3009608A4 /* SceneDelegate.swift in Sources */,
-				EFFD66A92BB7FC72009608A4 /* FeedCell.swift in Sources */,
+				EFFD66C22BB88387009608A4 /* UIImage+Extensions.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -12,9 +12,9 @@ struct FeedViewRequest {
 }
 
 struct FeedInteractorResponse {
-    let services: [Int] // TODO: Change Int to real Type
+    let rawNetworkModel: ServicesNetworkModel
 }
 
 struct FeedViewModel {
-    var services: [FeedCell.DisplayData]
+    var services: [FeedViewController.FeedCellDisplayData]
 }

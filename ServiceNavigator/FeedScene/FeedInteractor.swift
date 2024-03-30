@@ -7,14 +7,21 @@
 
 import Foundation
 
-protocol FeedInteractorProtocol {}
+protocol FeedInteractorProtocol {
+    func handle(_: FeedViewRequest)
+}
 
 protocol FeedInteractorDelegateProtocol: AnyObject {}
 
 final class FeedInteractor {
-    var networkService: NetworkServiceProtocol
-    var feedPresenter: FeedPresenterProtocol
-    weak var delegate: FeedInteractorDelegateProtocol?
+    struct State {
+        var servicesInfo = ServicesNetworkModel(body: Body(services: [Service]()), status: 200)
+    }
+
+    private weak var delegate: FeedInteractorDelegateProtocol?
+    private let feedPresenter: FeedPresenterProtocol
+    private let networkService: NetworkServiceProtocol
+    private var state = State()
 
     init(networkService: NetworkServiceProtocol,
          feedPresenter: FeedPresenterProtocol,
@@ -23,21 +30,39 @@ final class FeedInteractor {
         self.networkService = networkService
         self.feedPresenter = feedPresenter
         self.delegate = delegate
-        testNetworkService(networkService)
+        prepareInitialState()
     }
 
-    // TODO: Delete
-    private func testNetworkService(_ networkService: NetworkServiceProtocol) {
-        networkService.fetchServiceInfoWithIconImageData { result in
-            switch result {
+    private func prepareInitialState() {
+        updateCurrentState { [weak self] in
+            guard let self else { return }
+            let interactorResponse = FeedInteractorResponse(self.state)
+            self.feedPresenter.handleWith(interactorResponse)
+        }
+    }
 
+    private func updateCurrentState(completion: @escaping () -> Void) {
+        networkService.fetchServiceInfoWithIconImageData { [weak self] result in
+            guard let self = self else { return }
+            switch result {
             case let .success(info):
-                print(info.body.services[2])
+                self.state.servicesInfo = info
+                completion()
             case let .failure(error):
-                print(error)
+                print(error) // TODO: Handle Error
             }
         }
     }
 }
 
-extension FeedInteractor: FeedInteractorProtocol {}
+extension FeedInteractor: FeedInteractorProtocol {
+    func handle(_ feedViewRequest: FeedViewRequest) {
+        debugPrint(feedViewRequest)
+    }
+}
+
+private extension FeedInteractorResponse {
+    init(_ state: FeedInteractor.State) {
+        rawNetworkModel = state.servicesInfo
+    }
+}
