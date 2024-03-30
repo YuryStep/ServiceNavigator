@@ -28,6 +28,7 @@
 		EFFD66BF2BB8834E009608A4 /* UIView+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFFD66BE2BB8834E009608A4 /* UIView+Extensions.swift */; };
 		EFFD66C22BB88387009608A4 /* UIImage+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFFD66C12BB88387009608A4 /* UIImage+Extensions.swift */; };
 		EFFD66C42BB8839E009608A4 /* UINavigationController+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFFD66C32BB8839E009608A4 /* UINavigationController+Extensions.swift */; };
+		EFFD66C62BB88A14009608A4 /* AppAlertMaker.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFFD66C52BB88A14009608A4 /* AppAlertMaker.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -54,6 +55,7 @@
 		EFFD66BE2BB8834E009608A4 /* UIView+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Extensions.swift"; sourceTree = "<group>"; };
 		EFFD66C12BB88387009608A4 /* UIImage+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImage+Extensions.swift"; sourceTree = "<group>"; };
 		EFFD66C32BB8839E009608A4 /* UINavigationController+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UINavigationController+Extensions.swift"; sourceTree = "<group>"; };
+		EFFD66C52BB88A14009608A4 /* AppAlertMaker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppAlertMaker.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -88,7 +90,8 @@
 			children = (
 				EFFD669B2BB7FB60009608A4 /* Root */,
 				EFFD669E2BB7FBBF009608A4 /* Core */,
-				EFFD669F2BB7FBD2009608A4 /* FeedScene */,
+				EFFD66C72BB88A20009608A4 /* CommonUI */,
+				EFFD66C82BB897B6009608A4 /* Scenes */,
 				EFFD66C02BB8836B009608A4 /* Extension */,
 				EFFD66952BB7F67B009608A4 /* SupportingFiles */,
 				EFFD66962BB7F825009608A4 /* .swiftlint.yml */,
@@ -166,6 +169,22 @@
 				EFFD66C32BB8839E009608A4 /* UINavigationController+Extensions.swift */,
 			);
 			path = Extension;
+			sourceTree = "<group>";
+		};
+		EFFD66C72BB88A20009608A4 /* CommonUI */ = {
+			isa = PBXGroup;
+			children = (
+				EFFD66C52BB88A14009608A4 /* AppAlertMaker.swift */,
+			);
+			path = CommonUI;
+			sourceTree = "<group>";
+		};
+		EFFD66C82BB897B6009608A4 /* Scenes */ = {
+			isa = PBXGroup;
+			children = (
+				EFFD669F2BB7FBD2009608A4 /* FeedScene */,
+			);
+			path = Scenes;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -266,6 +285,7 @@
 				EFFD66B12BB80E05009608A4 /* AppCoordinator.swift in Sources */,
 				EFFD66A52BB7FC43009608A4 /* FeedModels.swift in Sources */,
 				EFFD66862BB7E2E3009608A4 /* FeedViewController.swift in Sources */,
+				EFFD66C62BB88A14009608A4 /* AppAlertMaker.swift in Sources */,
 				EFFD66A12BB7FBFA009608A4 /* FeedInteractor.swift in Sources */,
 				EFFD66C42BB8839E009608A4 /* UINavigationController+Extensions.swift in Sources */,
 				EFFD66AC2BB80D98009608A4 /* AppFlow.swift in Sources */,

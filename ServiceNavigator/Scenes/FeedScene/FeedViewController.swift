@@ -12,9 +12,9 @@ protocol FeedViewProtocol: AnyObject {
 }
 
 final class FeedViewController: UIViewController {
-    typealias FeedCellRegistration = UICollectionView.CellRegistration<UICollectionViewListCell, Item>
-    typealias DataSource = UICollectionViewDiffableDataSource<Section, Item>
-    typealias Snapshot = NSDiffableDataSourceSnapshot<Section, Item>
+    private enum Constants {
+        static let navigationBarTitle = "Сервисы"
+    }
 
     struct FeedCellDisplayData: Hashable {
         let id = UUID()
@@ -35,6 +35,10 @@ final class FeedViewController: UIViewController {
         case service(FeedCellDisplayData)
     }
 
+    typealias FeedCellRegistration = UICollectionView.CellRegistration<UICollectionViewListCell, Item>
+    typealias DataSource = UICollectionViewDiffableDataSource<Section, Item>
+    typealias Snapshot = NSDiffableDataSourceSnapshot<Section, Item>
+
     var interactor: FeedInteractorProtocol?
     private var displayData = DisplayData(feedCellDisplayData: [])
 
@@ -52,7 +56,7 @@ final class FeedViewController: UIViewController {
         let activityIndicator = UIActivityIndicatorView()
         activityIndicator.translatesAutoresizingMaskIntoConstraints = false
         activityIndicator.hidesWhenStopped = true
-        activityIndicator.color = .red
+        activityIndicator.color = .white
         activityIndicator.style = .large
         return activityIndicator
     }()
@@ -65,7 +69,7 @@ final class FeedViewController: UIViewController {
     }
 
     private func setupNavigationBar() {
-        navigationItem.title = "Сервисы"
+        navigationItem.title = Constants.navigationBarTitle
     }
 
     private func setupView() {

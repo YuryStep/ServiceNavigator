@@ -11,11 +11,17 @@ protocol FeedInteractorProtocol {
     func handle(_: FeedViewRequest)
 }
 
-protocol FeedInteractorDelegateProtocol: AnyObject {}
+protocol FeedInteractorDelegateProtocol: AnyObject {
+    func openService(atLink: String)
+}
 
 final class FeedInteractor {
     struct State {
         var servicesInfo = ServicesNetworkModel(body: Body(services: [Service]()), status: 200)
+
+        func getService(atIndex index: Int) -> Service {
+            return servicesInfo.body.services[index]
+        }
     }
 
     private weak var delegate: FeedInteractorDelegateProtocol?
@@ -57,7 +63,9 @@ final class FeedInteractor {
 
 extension FeedInteractor: FeedInteractorProtocol {
     func handle(_ feedViewRequest: FeedViewRequest) {
-        debugPrint(feedViewRequest)
+        guard let chosenServiceIndex = feedViewRequest.userSelectedItem?.row else { return }
+        let serviceLink = state.getService(atIndex: chosenServiceIndex).link
+        delegate?.openService(atLink: serviceLink)
     }
 }
 

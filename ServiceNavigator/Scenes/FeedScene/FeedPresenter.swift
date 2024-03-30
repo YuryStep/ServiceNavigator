@@ -11,7 +11,7 @@ protocol FeedPresenterProtocol {
     func handleWith(_: FeedInteractorResponse)
 }
 
-class FeedPresenter {
+final class FeedPresenter {
     private enum Constants {
         static let fixedIconSize = 56
     }

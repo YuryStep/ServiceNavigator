@@ -9,7 +9,7 @@ import UIKit
 
 protocol MainFlowCoordinatorProtocol: CoordinatorProtocol {
     func showFeedScene()
-    func showWebSwitchScene()
+    func openAppOrWebForService(atLink: String)
 }
 
 final class MainFlowCoordinator: MainFlowCoordinatorProtocol {
@@ -32,9 +32,23 @@ final class MainFlowCoordinator: MainFlowCoordinatorProtocol {
         navigationController.pushViewController(viewController, animated: true)
     }
 
-    func showWebSwitchScene() {
-        print("showWebSwitchScene action is not implemented")
+    func openAppOrWebForService(atLink link: String) {
+        if let url = URL(string: link), UIApplication.shared.canOpenURL(url) {
+            UIApplication.shared.open(url, options: [:], completionHandler: nil)
+        } else {
+            showInvalidLinkAlertIfPossible()
+        }
+    }
+
+    private func showInvalidLinkAlertIfPossible() {
+        if let topViewController = navigationController.topViewController {
+            AppAlertMaker.showAlert(from: topViewController, trigger: .invalidServiceURL)
+        }
     }
 }
 
-extension MainFlowCoordinator: FeedInteractorDelegateProtocol {}
+extension MainFlowCoordinator: FeedInteractorDelegateProtocol {
+    func openService(atLink link: String) {
+        openAppOrWebForService(atLink: link)
+    }
+}
