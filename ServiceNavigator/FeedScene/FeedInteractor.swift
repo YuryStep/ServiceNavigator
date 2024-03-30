@@ -23,6 +23,20 @@ final class FeedInteractor {
         self.networkService = networkService
         self.feedPresenter = feedPresenter
         self.delegate = delegate
+        testNetworkService(networkService)
+    }
+
+    // TODO: Delete
+    private func testNetworkService(_ networkService: NetworkServiceProtocol) {
+        networkService.fetchServiceInfoWithIconImageData { result in
+            switch result {
+
+            case let .success(info):
+                print(info.body.services[2])
+            case let .failure(error):
+                print(error)
+            }
+        }
     }
 }
 

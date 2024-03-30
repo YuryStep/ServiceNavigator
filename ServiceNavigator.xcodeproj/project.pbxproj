@@ -24,6 +24,8 @@
 		EFFD66AF2BB80DD3009608A4 /* CoordinatorProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFFD66AE2BB80DD3009608A4 /* CoordinatorProtocol.swift */; };
 		EFFD66B12BB80E05009608A4 /* AppCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFFD66B02BB80E05009608A4 /* AppCoordinator.swift */; };
 		EFFD66B32BB80E16009608A4 /* MainFlowCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFFD66B22BB80E16009608A4 /* MainFlowCoordinator.swift */; };
+		EFFD66B82BB81F82009608A4 /* ServiceNetworkModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFFD66B72BB81F82009608A4 /* ServiceNetworkModel.swift */; };
+		EFFD66BA2BB81F9A009608A4 /* NetworkError.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFFD66B92BB81F9A009608A4 /* NetworkError.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -46,6 +48,8 @@
 		EFFD66AE2BB80DD3009608A4 /* CoordinatorProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoordinatorProtocol.swift; sourceTree = "<group>"; };
 		EFFD66B02BB80E05009608A4 /* AppCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppCoordinator.swift; sourceTree = "<group>"; };
 		EFFD66B22BB80E16009608A4 /* MainFlowCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainFlowCoordinator.swift; sourceTree = "<group>"; };
+		EFFD66B72BB81F82009608A4 /* ServiceNetworkModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServiceNetworkModel.swift; sourceTree = "<group>"; };
+		EFFD66B92BB81F9A009608A4 /* NetworkError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkError.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -142,6 +146,8 @@
 			isa = PBXGroup;
 			children = (
 				EFFD669C2BB7FBAD009608A4 /* NetworkService.swift */,
+				EFFD66B72BB81F82009608A4 /* ServiceNetworkModel.swift */,
+				EFFD66B92BB81F9A009608A4 /* NetworkError.swift */,
 			);
 			path = Services;
 			sourceTree = "<group>";
@@ -257,8 +263,10 @@
 				EFFD66A12BB7FBFA009608A4 /* FeedInteractor.swift in Sources */,
 				EFFD66AC2BB80D98009608A4 /* AppFlow.swift in Sources */,
 				EFFD66B32BB80E16009608A4 /* MainFlowCoordinator.swift in Sources */,
+				EFFD66B82BB81F82009608A4 /* ServiceNetworkModel.swift in Sources */,
 				EFFD66822BB7E2E3009608A4 /* AppDelegate.swift in Sources */,
 				EFFD66A72BB7FC5A009608A4 /* FeedSceneAssembly.swift in Sources */,
+				EFFD66BA2BB81F9A009608A4 /* NetworkError.swift in Sources */,
 				EFFD66AF2BB80DD3009608A4 /* CoordinatorProtocol.swift in Sources */,
 				EFFD669D2BB7FBAD009608A4 /* NetworkService.swift in Sources */,
 				EFFD66A32BB7FC25009608A4 /* FeedPresenter.swift in Sources */,
