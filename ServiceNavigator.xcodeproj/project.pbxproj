@@ -20,6 +20,10 @@
 		EFFD66A52BB7FC43009608A4 /* FeedModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFFD66A42BB7FC43009608A4 /* FeedModels.swift */; };
 		EFFD66A72BB7FC5A009608A4 /* FeedSceneAssembly.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFFD66A62BB7FC59009608A4 /* FeedSceneAssembly.swift */; };
 		EFFD66A92BB7FC72009608A4 /* FeedCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFFD66A82BB7FC72009608A4 /* FeedCell.swift */; };
+		EFFD66AC2BB80D98009608A4 /* AppFlow.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFFD66AB2BB80D98009608A4 /* AppFlow.swift */; };
+		EFFD66AF2BB80DD3009608A4 /* CoordinatorProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFFD66AE2BB80DD3009608A4 /* CoordinatorProtocol.swift */; };
+		EFFD66B12BB80E05009608A4 /* AppCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFFD66B02BB80E05009608A4 /* AppCoordinator.swift */; };
+		EFFD66B32BB80E16009608A4 /* MainFlowCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFFD66B22BB80E16009608A4 /* MainFlowCoordinator.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -38,6 +42,10 @@
 		EFFD66A42BB7FC43009608A4 /* FeedModels.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedModels.swift; sourceTree = "<group>"; };
 		EFFD66A62BB7FC59009608A4 /* FeedSceneAssembly.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedSceneAssembly.swift; sourceTree = "<group>"; };
 		EFFD66A82BB7FC72009608A4 /* FeedCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedCell.swift; sourceTree = "<group>"; };
+		EFFD66AB2BB80D98009608A4 /* AppFlow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppFlow.swift; sourceTree = "<group>"; };
+		EFFD66AE2BB80DD3009608A4 /* CoordinatorProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoordinatorProtocol.swift; sourceTree = "<group>"; };
+		EFFD66B02BB80E05009608A4 /* AppCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppCoordinator.swift; sourceTree = "<group>"; };
+		EFFD66B22BB80E16009608A4 /* MainFlowCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainFlowCoordinator.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -95,6 +103,7 @@
 			children = (
 				EFFD66812BB7E2E3009608A4 /* AppDelegate.swift */,
 				EFFD66832BB7E2E3009608A4 /* SceneDelegate.swift */,
+				EFFD66AB2BB80D98009608A4 /* AppFlow.swift */,
 			);
 			path = Root;
 			sourceTree = "<group>";
@@ -102,7 +111,8 @@
 		EFFD669E2BB7FBBF009608A4 /* Core */ = {
 			isa = PBXGroup;
 			children = (
-				EFFD669C2BB7FBAD009608A4 /* NetworkService.swift */,
+				EFFD66B42BB80E26009608A4 /* Coordinator */,
+				EFFD66AD2BB80DC0009608A4 /* Services */,
 			);
 			path = Core;
 			sourceTree = "<group>";
@@ -110,11 +120,11 @@
 		EFFD669F2BB7FBD2009608A4 /* FeedScene */ = {
 			isa = PBXGroup;
 			children = (
+				EFFD66A62BB7FC59009608A4 /* FeedSceneAssembly.swift */,
+				EFFD66A42BB7FC43009608A4 /* FeedModels.swift */,
+				EFFD66A22BB7FC25009608A4 /* FeedPresenter.swift */,
 				EFFD66A02BB7FBFA009608A4 /* FeedInteractor.swift */,
 				EFFD66852BB7E2E3009608A4 /* FeedViewController.swift */,
-				EFFD66A22BB7FC25009608A4 /* FeedPresenter.swift */,
-				EFFD66A42BB7FC43009608A4 /* FeedModels.swift */,
-				EFFD66A62BB7FC59009608A4 /* FeedSceneAssembly.swift */,
 				EFFD66AA2BB7FC80009608A4 /* FeedViews */,
 			);
 			path = FeedScene;
@@ -126,6 +136,24 @@
 				EFFD66A82BB7FC72009608A4 /* FeedCell.swift */,
 			);
 			path = FeedViews;
+			sourceTree = "<group>";
+		};
+		EFFD66AD2BB80DC0009608A4 /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				EFFD669C2BB7FBAD009608A4 /* NetworkService.swift */,
+			);
+			path = Services;
+			sourceTree = "<group>";
+		};
+		EFFD66B42BB80E26009608A4 /* Coordinator */ = {
+			isa = PBXGroup;
+			children = (
+				EFFD66AE2BB80DD3009608A4 /* CoordinatorProtocol.swift */,
+				EFFD66B02BB80E05009608A4 /* AppCoordinator.swift */,
+				EFFD66B22BB80E16009608A4 /* MainFlowCoordinator.swift */,
+			);
+			path = Coordinator;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -223,11 +251,15 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				EFFD66B12BB80E05009608A4 /* AppCoordinator.swift in Sources */,
 				EFFD66A52BB7FC43009608A4 /* FeedModels.swift in Sources */,
 				EFFD66862BB7E2E3009608A4 /* FeedViewController.swift in Sources */,
 				EFFD66A12BB7FBFA009608A4 /* FeedInteractor.swift in Sources */,
+				EFFD66AC2BB80D98009608A4 /* AppFlow.swift in Sources */,
+				EFFD66B32BB80E16009608A4 /* MainFlowCoordinator.swift in Sources */,
 				EFFD66822BB7E2E3009608A4 /* AppDelegate.swift in Sources */,
 				EFFD66A72BB7FC5A009608A4 /* FeedSceneAssembly.swift in Sources */,
+				EFFD66AF2BB80DD3009608A4 /* CoordinatorProtocol.swift in Sources */,
 				EFFD669D2BB7FBAD009608A4 /* NetworkService.swift in Sources */,
 				EFFD66A32BB7FC25009608A4 /* FeedPresenter.swift in Sources */,
 				EFFD66842BB7E2E3009608A4 /* SceneDelegate.swift in Sources */,
