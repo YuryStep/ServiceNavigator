@@ -17,7 +17,7 @@ protocol FeedInteractorDelegateProtocol: AnyObject {
 
 final class FeedInteractor {
     struct State {
-        var servicesInfo = ServicesNetworkModel(body: Body(services: [Service]()), status: 200)
+        var servicesInfo = ServicesNetworkModel(body: Body(services: []), status: nil)
 
         func getService(atIndex index: Int) -> Service {
             return servicesInfo.body.services[index]
@@ -55,7 +55,7 @@ final class FeedInteractor {
                 self.state.servicesInfo = info
                 completion()
             case let .failure(error):
-                print(error) // TODO: Handle Error
+                debugPrint(error.localizedDescription)
             }
         }
     }

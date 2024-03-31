@@ -56,7 +56,7 @@ final class FeedViewController: UIViewController {
         let activityIndicator = UIActivityIndicatorView()
         activityIndicator.translatesAutoresizingMaskIntoConstraints = false
         activityIndicator.hidesWhenStopped = true
-        activityIndicator.color = .white
+        activityIndicator.color = .activityIndicator
         activityIndicator.style = .large
         return activityIndicator
     }()
@@ -73,7 +73,7 @@ final class FeedViewController: UIViewController {
     }
 
     private func setupView() {
-        view.backgroundColor = .black
+        view.backgroundColor = .feedBackground
         view.addSubviews([collectionView, loadingIndicator])
         let guide = view.safeAreaLayoutGuide
         NSLayoutConstraint.activate([
@@ -89,7 +89,7 @@ final class FeedViewController: UIViewController {
 
     private func createLayout() -> UICollectionViewLayout {
         var separatorConfiguration = UIListSeparatorConfiguration(listAppearance: .plain)
-        separatorConfiguration.color = .systemGray
+        separatorConfiguration.color = .cellElements
         separatorConfiguration.topSeparatorVisibility = .hidden
 
         var collectionConfiguration = UICollectionLayoutListConfiguration(appearance: .plain)
@@ -114,17 +114,17 @@ final class FeedViewController: UIViewController {
     private func configureCell(_ cell: UICollectionViewListCell, with displayData: FeedCellDisplayData) {
         var content = cell.defaultContentConfiguration()
         content.text = displayData.name
-        content.textProperties.color = .white
+        content.textProperties.color = .title
         content.secondaryText = displayData.description
-        content.secondaryTextProperties.color = .white
+        content.secondaryTextProperties.color = .description
         content.image = displayData.iconImage
         cell.contentConfiguration = content
 
         cell.backgroundConfiguration = UIBackgroundConfiguration.clear()
         cell.selectedBackgroundView = UIView()
-        cell.selectedBackgroundView?.backgroundColor = .systemGray2
+        cell.selectedBackgroundView?.backgroundColor = .selectedItem
 
-        let disclosureIndicator = UICellAccessory.disclosureIndicator(displayed: .always, options: .init(tintColor: .systemGray))
+        let disclosureIndicator = UICellAccessory.disclosureIndicator(displayed: .always, options: .init(tintColor: .cellElements))
         cell.accessories = [disclosureIndicator]
     }
 

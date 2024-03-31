@@ -9,7 +9,7 @@ import Foundation
 
 struct ServicesNetworkModel: Codable {
     let body: Body
-    let status: Int
+    let status: Int?
 }
 
 struct Body: Codable {
