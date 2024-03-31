@@ -18,13 +18,15 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
     }
 
     private func configureAppInitialState(with scene: UIWindowScene) {
-        window = UIWindow(windowScene: scene)
-        let networkService = NetworkService()
         let rootNavigationController = UINavigationController()
         rootNavigationController.setupDefaultNavigationBarAppearance()
-        configureAppCoordinatorWith(rootNavigationController, networkService: networkService)
+
+        window = UIWindow(windowScene: scene)
         window?.rootViewController = rootNavigationController
         window?.makeKeyAndVisible()
+
+        let networkService = NetworkService()
+        configureAppCoordinatorWith(rootNavigationController, networkService: networkService)
     }
 
     private func configureAppCoordinatorWith(_ navigationController: UINavigationController,

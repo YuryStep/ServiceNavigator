@@ -1,6 +1,7 @@
 {
   "images" : [
     {
+      "filename" : "apps_list_detail_regular_icon.png",
       "idiom" : "universal",
       "platform" : "ios",
       "size" : "1024x1024"
